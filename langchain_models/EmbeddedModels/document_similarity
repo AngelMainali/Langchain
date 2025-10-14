@@ -1,0 +1,31 @@
+from langchain_huggingface import HuggingFaceEmbeddings
+from dotenv import load_dotenv
+from sklearn.metrics.pairwise import  cosine_similarity
+import numpy as np
+
+load_dotenv()
+
+embedding = HuggingFaceEmbeddings(model_name = 'sentence-transformers/all-MiniLM-L6-v2')
+
+documents = [
+    "🇳🇵 Nepal is a landlocked country in South Asia, famous for Mount Everest and its rich cultural heritage.",
+    "🇯🇵 Japan is an island nation in East Asia known for its technology, cherry blossoms, and ancient traditions.",
+    "🇫🇷 France is located in Western Europe and is renowned for its cuisine, art, and the Eiffel Tower.",
+    "🇧🇷 Brazil is the largest country in South America, celebrated for the Amazon rainforest and vibrant festivals.",
+    "🇪🇬 Egypt is a North African country famous for its ancient pyramids, the Nile River, and historic monuments."
+]
+
+query = "Which country for mt everest ?"
+
+doc_embeddings = embedding.embed_documents(documents)
+query_embeddings = embedding.embed_query(query)
+
+scores = cosine_similarity([query_embeddings], doc_embeddings)
+print("similarity_Score is ", scores)
+
+index= np.argmax(scores)
+print("index of highest similarity scores ", index)
+
+print(query)
+print(documents[index])
+
