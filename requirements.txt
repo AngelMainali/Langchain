@@ -1,23 +1,21 @@
-langchain
-langchain-core
+# Core LangChain ecosystem (1.x series)
+langchain>=1.0.0
+langchain-core>=1.0.0
+langchain-openai>=1.0.0
+langchain-anthropic>=1.0.0
+langchain-google-vertexai>=1.0.0  # replaces langchain-google-genai
 
-langchain-openai
+# AI/ML dependencies
 openai
-
-langchain-anthropic
-
-langchain-google-genai
 google-generativeai
-
-langchain-huggingface
 transformers
 huggingface-hub
-
+sentence-transformers
+torch
 numpy
 scikit-learn
 
-sentence-transformers
-torch
-
+# Utilities
 streamlit
 python-dotenv
+wheel
