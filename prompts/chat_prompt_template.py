@@ -5,7 +5,7 @@ chat_template = ChatPromptTemplate([
      ('system','You are a helpful {domain} expert' ),
     ('human', 'Explain in simple terms, what is {topic}')
 
-    # Doesnt work in this way dynamic template in multi-turn message
+    # Doesnt work in this way  in multi-turn message
 
     # SystemMessage(content = 'You are a helpful {domain} expert'),
     # HumanMessage(content = 'Explain in simple terms, what is {topic}')

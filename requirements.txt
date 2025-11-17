@@ -20,3 +20,6 @@ streamlit
 python-dotenv
 wheel
 pydantic
+pydantic[email]
+
+
