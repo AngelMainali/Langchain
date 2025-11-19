@@ -25,4 +25,8 @@ pydantic[email]
 
 grandalf
 
+pypdf
+beautifulsoup4
+
+
 

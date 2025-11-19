@@ -1,16 +1,11 @@
-from langchain_community.document_loaders import TextLoader
-from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
-from dotenv import load_dotenv
-from langchain_core.prompts import PromptTemplate
-from langchain_core.output_parsers import StrOutputParser
+from langchain_community.document_loaders import PyPDFLoader
 
-load_dotenv()
+loader = PyPDFLoader('question_paper.pdf')
 
-llm = HuggingFaceEndpoint(
-    repo_id="meta-llama/Llama-3.1-8B-Instruct",
-    task="text-generation", 
-)
+docs = loader.load()
 
-model = ChatHuggingFace(llm=llm)
+# print(len(docs))
+# print(docs)
 
-parser = StrOutputParser()
+print(docs[0].page_content)
+print(docs[0].metadata)
