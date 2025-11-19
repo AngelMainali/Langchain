@@ -1,0 +1,148 @@
+Machine Learning (ML)
+
+Machine Learning is a subset of artificial intelligence focused on building systems that learn from data. ML models improve their performance on a task over time without being explicitly programmed.
+
+Types of ML
+
+Supervised Learning
+Models are trained using labeled datasets. Tasks include:
+
+Classification (e.g., spam detection, sentiment analysis)
+
+Regression (e.g., predicting house prices)
+
+Unsupervised Learning
+Models find hidden patterns in unlabeled data. Examples:
+
+Clustering (K-Means, DBSCAN)
+
+Dimensionality Reduction (PCA)
+
+Reinforcement Learning
+Agents learn via rewards and penalties in an environment. Applications:
+
+Robotics
+
+Game playing (e.g., AlphaGo)
+
+Common ML Algorithms
+
+Linear Regression
+
+Logistic Regression
+
+Decision Trees
+
+Random Forest
+
+Support Vector Machines
+
+K-Nearest Neighbors
+
+Neural Networks
+
+ML Pipeline
+
+Data Collection
+
+Data Cleaning
+
+Feature Engineering
+
+Model Training
+
+Model Evaluation
+
+Deployment
+
+Popular ML Libraries
+
+Scikit-Learn
+
+TensorFlow
+
+PyTorch
+
+XGBoost
+
+LightGBM
+
+LangChain
+
+LangChain is a framework for building applications powered by language models. It provides tools for chaining LLMs with data sources, external APIs, databases, and custom logic.
+
+Key Concepts in LangChain
+
+Models
+LLMs such as OpenAI, Hugging Face, Mistral, Cohere.
+
+Prompt Templates
+Structured templates for generating consistent prompts.
+
+Output Parsers
+Convert LLM output into structured formats (JSON, Pydantic, etc).
+
+Document Loaders
+Tools to load data from PDFs, text files, webpages, Notion, etc.
+
+Text Splitters
+Break large documents into smaller chunks for processing in RAG.
+
+Embeddings
+Convert text into vector representations. Examples:
+
+OpenAI embeddings
+
+Hugging Face embedding models
+
+Vector Stores
+Databases to store embeddings for RAG:
+
+FAISS
+
+ChromaDB
+
+Pinecone
+
+Weaviate
+
+Retrievers
+Components that fetch relevant chunks using similarity search.
+
+Chains
+A sequence of steps passed to the LLM.
+
+Agents
+LLMs that decide which tool to call and in what order.
+
+RAG (Retrieval Augmented Generation) Workflow
+
+Load documents (PDF, text, CSV, etc).
+
+Split into chunks.
+
+Generate embeddings.
+
+Store embeddings in a vector database.
+
+When a user asks a question:
+
+Retrieve relevant chunks
+
+Pass them to the LLM along with the prompt
+
+LLM generates answer grounded in retrieved knowledge.
+
+LangChain RAG Example (Conceptual)
+
+Load documents with TextLoader.
+
+Split using RecursiveCharacterTextSplitter.
+
+Create embeddings using HuggingFaceEmbeddings.
+
+Store embeddings in Chroma/FAISS.
+
+Initialize retriever with .as_retriever()
+
+Use RetrievalQA chain to answer user questions.
