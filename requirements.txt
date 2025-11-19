@@ -5,6 +5,7 @@ langchain-openai>=1.0.0
 langchain-anthropic>=1.0.0
 langchain-google-vertexai>=1.0.0  # replaces langchain-google-genai
 langchain-community
+langchain-text-splitters
 
 # AI/ML dependencies
 openai
